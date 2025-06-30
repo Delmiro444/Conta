@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Financial Capital</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('logo.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    .banner-contabilidade {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Container usa Grid para as duas colunas */
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 20px;
+      background: rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Coluna do texto - usa Flexbox pra alinhar conteúdo vertical */
+    .texto {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .texto h2 {
+      margin-bottom: 10px;
+      color: #0d6efd;
+    }
+
+    .texto p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Coluna da imagem */
+    .imagem img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    transition: transform 0.6s ease-in-out;
+    animation: pulse 5s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+    /* Rodapé com Flexbox para centralizar */
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Media query para telas menores */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .imagem {
+        order: -1; /* imagem aparece antes do texto */
+      }
+    }
+    .form-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    animation: fadeSlideInForm 1s ease forwards;
+  }
+
+  @keyframes fadeSlideInForm {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .form-box h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-box label {
+    margin-top: 15px;
+    font-weight: bold;
+    display: block;
+  }
+
+  .input-group {
+    position: relative;
+    margin-top: 5px;
+  }
+
+  .input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    z-index: 1;
+  }
+
+  .form-box input,
+  .form-box select,
+  .form-box textarea {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+    font-size: 1rem;
+    display: block;
+  }
+
+  .form-box textarea {
+    resize: vertical;
+  }
+
+  .form-box input[type="submit"] {
+    background: transparent;
+    color: white;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 8px;
+    padding-left: 10px;
+  }
+
+  .form-box input[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(13, 76, 250, 0.6);
+  }
+
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    margin: 0;
+  }
+
+  .checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-weight: normal;
+  }
+
+  .checkbox-group a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .banner-contabilidade {
+      padding: 20px;
+    }
+
+    
+  }
+
+  @media (max-width: 768px) {
+    .form-box {
+      padding: 30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form-box {
+      padding: 20px;
+    }
+
+    .input-group i {
+      left: 8px;
+    }
+
+    .form-box input,
+    .form-box textarea {
+      padding-left: 30px;
+    }
+  }
+</style>
+</style>
+
+  </style>
+</head>
+<body>
+
+  <div class="banner-contabilidade">
+
+  <div class="container">
+    <div class="texto">
+      <h2>Nossos critérios</h2>
+      <p style="text-align: justify; color: #ffffff;">
+        Critérios para Participação em Consultoria
+        Para garantir que a Consultoria da Financial Capital Managers seja eficaz e tenha valor real para o seu negócio, estabelecemos estes critérios simples:
+        
+        Não estar legalmente registrado ou formalizado em nenhum país;
+        
+        Ter lido e aceito os termos e condições de consultoria;
+        
+        Ter um representante responsável que possa participar dessas sessões;
+        
+        Informe corretamente a área de atuação e os infratores da sua empresa;
+        
+        Está disponível para reuniões on-line ou presenciais , conforme necessário;
+        
+        Complete o registro com as fórmulas validadas e atualizadas.
+        
+        Mediante solicitação da fórmula, nossa equipe realizará uma análise inicial e entrará em contato com as empresas selecionadas para uma etapa aproximada.
+      </p>
+      
+    </div>
+    <div class="imagem">
+      <img src="fcm.png" alt="Imagem de exemplo"/>
+    </div>
+  </div>
+</div>
+<div class="banner-contabilidade" style="display: flex; justify-content: center; text-align: start; align-items: center; padding: 40px 20px; min-height: 100vh;">
+  <form class="form-box" method="post" action="https://www.freecodecamp.org">
+    <h1>Regista-te já</h1>
+
+    <label for="primeiro">Nome da empresa:</label>
+    <div class="input-group">
+      <i class="fas fa-user"></i>
+      <input id="primeiro" name="primeiro" type="text" placeholder="digita o nome da empresa" required />
+    </div>
+
+    <label for="email">Email:</label>
+    <div class="input-group">
+      <i class="fas fa-envelope"></i>
+      <input id="email" name="email" type="email" placeholder="digita o email" required />
+    </div>
+
+    <label for="bio">Fale um pouco sobre a actividade da sua empresa:</label>
+    <div class="input-group">
+      <i class="fas fa-comment-dots"></i>
+      <textarea id="bio" name="bio" rows="3" placeholder="Me fala sobre á actividade da sua empresa"></textarea>
+    </div>
+
+    <div class="checkbox-group">
+      <label for="termos">
+        <input type="checkbox" id="termos" required />
+        Aceito os <a href="#" target="_blank">termos e condições</a>
+      </label>
+    </div>
+
+    <input type="submit" value="Enviar formulário" />
+  </form>
+</div>
+<footer class="site-footer">
+  <style>
+    .site-footer {
+      padding: 30px 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-top: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto 20px;
+      gap: 30px;
+    }
+
+    .footer-content > div {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .footer-info h3 {
+      margin-top: 0;
+      color: #00aaff;
+      font-size: 1.2rem;
+    }
+
+    .footer-contact p {
+      margin: 5px 0;
+    }
+
+    .footer-social a {
+      margin-right: 15px;
+      font-size: 1.4rem;
+      color: #00aaff;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: #ffffff;
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-social a {
+        margin: 0 10px;
+      }
+    }
+  </style>
+
+  <div class="footer-content">
+    <div class="footer-info">
+      <h3>Financial Capital Managers</h3>
+      <p>Especialistas em gestão financeira, contabilidade e fiscalidade.</p>
+    </div>
+
+    <div class="footer-contact">
+      <p>
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:financialcapital.managers@gmail.com" class="text-yellow-500 hover:underline" style="color: #ffffff;">
+          financialcapital.managers@gmail.com
+        </a>
+      </p>
+      <p>
+        <i class="fas fa-phone"></i> +244 948369525 / +244 994387446
+      </p>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/30103089/admin/dashboard/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://wa.me/244948369525" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <a href="sobre.html">Sobre</a> |
+    <a href="contacto.html">Contato</a> |
+    <a href="termo.html">Termos de Uso</a> |
+    <a href="privacidade.html">Política de Privacidade</a> |
+    <a href="potfolio.html">Portfólio</a>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Financial Capital Managers. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
